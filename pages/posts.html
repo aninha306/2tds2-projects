@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,35 @@
     <link rel="stylesheet" href="../assets/css/style.posts.css">
     <title>Posts</title>
 </head>
+
 <body>
-    
+    <main>
+        <h1>Próximos Posts</h1>
+        <div id="postForm">
+            <div>
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="categorie">Categoria</label>
+                <input type="search" id="categorie" name="categorie" required>
+            </div>
+            <div>
+                <label for="resume">Resumo</label>
+               <textarea name="resume" id="resume" rows= "4" required></textarea>
+            </div>
+            <div>
+                <label for="autor">Autor</label>
+                <input type="text" id="autor" name="autor" required>
+            </div>
+            <div>
+                <label for="date">Data de Publicação</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="button" >Cadastrar</button>
+        </div>
+    </main>
+
 </body>
+
 </html>
