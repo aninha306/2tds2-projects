@@ -1,23 +1,38 @@
 const posts = [];
+let postIndex = -1;
 
-function savePost(){
+function savePost() {
     const title = document.getElementById("title").value;
     const category = document.getElementById("category").value;
     const resume = document.getElementById("resume").value;
     const author = document.getElementById("author").value;
     const date = document.getElementById("date").value;
 
-    if(title && category && resume && author && date){
-        storePost (title, category, resume, author, date);
+    if (title && category && resume && author && date) {
+        if (postIndex == -1) {
+            storePost(title, category, resume, author, date);
+            cleanFields();
+            showPosts();
+        }
+        else {
+            posts[postIndex] = {
+                title,
+                category,
+                resume,
+                author,
+                date
+            };
+        }
         cleanFields();
         showPosts();
-    } else{
+        postIndex = -1;
+    } else {
         alert("Preencha todos os campos!")
     }
 
 }
 
-function cleanFields(){
+function cleanFields() {
     document.getElementById("title").value = "";
     document.getElementById("category").value = "";
     document.getElementById("resume").value = "";
@@ -39,6 +54,7 @@ function storePost(title, category, resume, author, date) {
 }
 
 function showPosts() {
+    document.getElementById("list").classList.remove("hidden");
     let showContent = "";
 
     posts.forEach((post, index) => {
@@ -58,4 +74,25 @@ function showPosts() {
     })
 
     document.getElementById("list").innerHTML = showContent;
+}
+
+function editPost(index) {
+    const post = posts[index];
+
+    document.getElementById("title").value = post.title;
+    document.getElementById("category").value = post.category;
+    document.getElementById("resume").value = post.resume;
+    document.getElementById("author").value = post.author;
+    document.getElementById("date").value = post.date;
+
+    postIndex = index;
+}
+
+function deletePost(index) {
+    posts.splice(index, 1);
+    showPosts();
+
+    if (posts.length == 0) {
+        document.getElementById("list").classList.add("hidden");
+    }
 }
