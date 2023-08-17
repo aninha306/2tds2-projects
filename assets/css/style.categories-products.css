@@ -1,47 +1,62 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
     background-color: #f4f4f4;
 }
-#container{
-    max-width: 50rem; /* 800px */
+
+#container {
+    max-width: 50rem;
+    /* 800px */
     margin: 0 auto;
     background-color: #fff;
-    padding: 1.25rem; /* 20px */
-    border-radius: 0.5rem; /* 80x */
+    padding: 1.25rem;
+    /* 20px */
+    border-radius: 0.5rem;
+    /* 80x */
     box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
 }
-h1{
+
+h1 {
     text-align: center;
-    margin-bottom: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem;
+    /* 20px */
 }
-h2{
-    margin-top: 1.25rem; 
+
+h2 {
+    margin-top: 1.25rem;
 }
-.form-container{
+
+.form-container {
     border: 1px solid #ccc;
     padding: 1.25rem;
     margin-bottom: 1.25rem;
     border-radius: 6px;
     background-color: #f9f9f9;
 }
-.form-container label{
+
+.form-container label {
     display: block;
-    margin-bottom: 0.31rem; /* 5px */
+    margin-bottom: 0.31rem;
+    /* 5px */
 }
-.form-container input[type="text"]{
+
+.form-container input,
+select {
     width: 100%;
-    padding: 0.62rem; /* 10px */
+    padding: 0.62rem;
+    /* 10px */
     margin-bottom: 0.62rem;
     border-radius: 3px;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-.btn{
+
+.btn {
     background-color: #fd1b1b;
     color: #fff;
     padding: 0.62rem 1.25rem;
@@ -50,8 +65,46 @@ h2{
     border-radius: 3px;
     transition: background-color 0.3s ease;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #e60e0e;
     color: #fff;
     transform: scale(1.01);
+}
+
+#productInfos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.62rem;
+}
+
+.productInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.list-container{
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    max-height: 20rem; /* 320px */
+    overflow-y: auto;
+}
+
+.list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-container li {
+    margin-bottom: 0.62rem;
+    padding: 0.62rem;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
